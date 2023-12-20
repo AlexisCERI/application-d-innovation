@@ -1,0 +1,29 @@
+## intent: weather 
+- Quel est le temps aujourd'hui ?
+- Je veux connaître le temps aujourd'hui
+- Dis-moi le temps d'aujourd'hui
+- Donne-moi la météo
+
+## intent: city
+- Paris
+- Apt
+- Marseille
+- Avignon 
+- Lyon
+- Londres 
+- New York
+
+## intent: vent
+- Quelle est la vitesse du vent ?
+- Est ce qu'il y a du vent ?
+- Est ce que le vent souffle fort ?
+
+## intent:ask_train_departures
+- Quels sont les prochains départs de trains ?
+- Donne-moi les horaires des trains qui partent.
+- Prochains départs de trains.
+
+## intent: ask_train_arrivals
+- Quelles sont les prochaines arrivées de trains ?
+- Donne-moi les horaires des trains qui arrivent.
+- Prochaines arrivées de trains.

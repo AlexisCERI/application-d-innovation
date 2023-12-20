@@ -1,0 +1,99 @@
+version: "2.0"
+stories:
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+- story: Story from Conversation ID d0eac3517ed74faab0d2cd098b4153f6
+  steps:
+  - intent: weather
+  - action: utter_city
+  - intent: city
+    entities:
+    - city: Marseille
+  - slot_was_set:
+    - city: Marseille
+  - action: action_weather_api
+- story: Story from Conversation ID 4f5831d6656f4f94baa53e4e94fafbd2
+  steps:
+  - intent: weather
+    entities:
+    - city: Marseille
+  - slot_was_set:
+    - city: Marseille
+  - action: action_weather_api
+  - intent: vent
+  - slot_was_set:
+    - city: Marseille
+  - action: action_vent
+- story: Story from Conversation ID aff8bcee75c247948aa137e106b8fc79
+  steps:
+  - intent: weather
+  - action: utter_city
+  - intent: city
+    entities:
+    - city: Londres
+  - slot_was_set:
+    - city: Londres
+  - action: action_weather_api
+  - intent: vent
+  - slot_was_set:
+    - city: Londres
+  - action: action_vent
+- story: Story from Conversation ID 0311c5c14bfc43599564e5cd8f7665a9
+  steps:
+  - intent: weather
+    entities:
+    - city: Londres
+  - slot_was_set:
+    - city: Londres
+  - action: action_weather_api
+- story: Greet user
+  steps:
+  - intent: greet
+  - action: utter_greet_response
+- story: Ask bot's name
+  steps:
+  - intent: ask_bot_name
+  - action: utter_bot_name_response
+- story: mood_how_are_you
+  steps:
+    - intent: mood_how_are_you
+    - action: utter_mood_how_are_you
+- story: capabilities_question
+  steps:
+    - intent: capabilities_question
+    - action: utter_capabilities
+- story: opinion_question
+  steps:
+    - intent: opinion_question
+    - action: utter_opinion
+- story: joke_request
+  steps:
+    - intent: joke_request
+    - action: utter_joke
+- story: user_thanks
+  steps:
+    - intent: thank_you
+    - action: utter_thank_you
+
