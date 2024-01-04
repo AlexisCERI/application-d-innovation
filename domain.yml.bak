@@ -1,0 +1,83 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- demande_emploi_du_temps:
+    use_entities: true
+- inform:
+    use_entities: true
+- weather:
+    use_entities: true
+- vent:
+    use_entities: true
+- city:
+    use_entities: true
+- ask_train_departures:
+    use_entities: true
+- ask_train_arrivals:
+    use_entities: true
+entities:
+- numero_groupe
+- niveau_formation
+- specialite
+slots: {}
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_demande_niveau_formation:
+  - text: Quel est ton niveau de formation?
+  utter_demande_specialite:
+  - text: Quelle est ta spécialité?
+  utter_demande_numero_groupe:
+  - text: Quel est ton groupe?
+  utter_repond_emploi_du_temps:
+  - text: Voici ton emploi du temps !
+  utter_city:
+  - image: https://publicdomainvectors.org/photos/weather-showers-scattered.png
+    text: Tu veux connaître le temps pour quelle ville ?
+  utter_weather:
+  - text: Un instant SVP
+  utter_vent:
+  - text: Tu veux connaitre la vitesse du vent pour quelle ville ?
+  utter_train_info:
+  - text: Train {train_number} de {departure_from} à {destination} partant à {departure_time}.
+  - text: Le train {train_number} partira de {departure_from} en direction de {destination} à {departure_time}.
+  - text: Les prochains départs de trains sont {train_number} de {departure_from} à {destination} à {departure_time}.
+  - text: Le train {train_number} en provenance de {departure_from} avec pour destination {destination} part à {departure_time}.
+  utter_train_info_arrivals:
+  - text: Train {train_number} de {departure_from} arrivera à {departure_time}.
+actions:
+- action_weather_api
+- action_vent
+- action_train_info
+- action_train_info_arrivals
+forms: {}
+e2e_actions: []
