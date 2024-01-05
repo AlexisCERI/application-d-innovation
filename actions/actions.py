@@ -20,7 +20,6 @@ class ActionWeatherApi(Action):
         temp_min = int(weather_data['temp_min'])
         temp_max = int(weather_data['temp_max'])
         
-        
         dispatcher.utter_message(
             text=f"La météo est {weather_description_fr}. La température minimale est {temp_min} degrés Celsius et la maximale est {temp_max} degrés Celsius."
         )
